@@ -1,26 +1,23 @@
 {
-  "name": "KdMona",
+  "name": "MaiTab",
   "manifest_version":2,
   "version": "0.0.1",
   "icons":
   {
-      "16": "images/icon.png",
-      "48": "images/icon-max.png",
-      "128": "images/icon-max.png"
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
   },
-  "description": "Unable to use",
-  "page_action":
+  "description": "a ligher newtab",
+  "browser_action":
   {
-      "default_icon": "images/icon.png",
-      "default_title": "KdMona-Bili",
+      "default_icon": "img/icon16.png",
+      "default_title": "MaiTab",
       "default_popup": "html/popup.html"
   },
   "permissions": [
     "tabs",
-    "webRequestBlocking",
-    "declarativeContent",
     "storage",
-    "notifications",
     "contextMenus",
     "activeTab",
     "https://*/*",
@@ -36,13 +33,11 @@
    ],
    "background":
    {
-     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"],
-     "persistent": false
+     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"]
    },
-   "web_accessible_resources": ["js/inject.js"],
    "options_ui":
    {
-       "page": "html/options.html",
+       "page": "html/option.html",
        "chrome_style": true
    },
    "chrome_url_overrides": {
