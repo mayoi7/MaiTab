@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 console.log("content-script run");
 let isEnd = false;  // 是否清除了百度异步加载的广告
+let count = 0;
 
 /* true: 是广告*/
 function checkIfAds($child) {
@@ -19,7 +20,7 @@ function checkIfAds($child) {
 function lightCheckIfAds($child) {
   let $id = $child.attr('id');
   if($child.attr('class').search('result') < 0) return true;
-  else if($id == "1" && '广告' == $child.find('span').text()) {
+  if($id == "1" && '广告' == $child.find('span').text()) {
     return true;
   } else return false;
 }
@@ -52,13 +53,26 @@ function clearAdsInBaidu() {
 
 function finalClearAdsInBaidu() {
   clearAdsInBaidu();
-  let count = 1;
+  count = 0;
   let time = setInterval(function(){
     clearAdsAgain();
     count += 1;
-    if(count >= 30) clearInterval(time);
+    if(count >= 50) clearInterval(time);
     console.log('test once');
   }, 200);
 }
 
-finalClearAdsInBaidu();
+chrome.storage.sync.get({'normal_clear': false}, function(items) {
+  console.log(items.normal_clear);
+  if(items.normal_clear == true) {
+    finalClearAdsInBaidu();
+  }
+});
+
+// 收到background发来的消息时进行再次清理
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.reclear == true) {  // 判断是否为要处理的消息
+    finalClearAdsInBaidu();
+    sendResponse({"result": "ok"});
+  }
+});
