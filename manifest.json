@@ -9,7 +9,7 @@
       "128": "img/icon128.png"
   },
   "description": "a ligher newtab",
-  "browser_action":
+  "page_action":
   {
       "default_icon": "img/icon16.png",
       "default_title": "MaiTab",
@@ -26,14 +26,15 @@
   "content_scripts":
    [
        {
-           "matches": ["<all_urls>"],
+           "matches": ["*://*.baidu.com/*"],
            "js": ["lib/jquery-min-1.12.4.js", "js/content-script.js"],
-           "run_at": "document_start"
+           "run_at": "document_end"
        }
    ],
    "background":
    {
-     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"]
+     "scripts": ["lib/jquery-min-1.12.4.js", "js/background.js"],
+     "president": false
    },
    "options_ui":
    {
