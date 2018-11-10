@@ -1,3 +1,53 @@
 body {
-  background: #000;
+/* font-family: "Merriweather", Georgia, serif; */
+/* font-family: soleil, Raleway, sans-serif; */
+  font-family: 'lora';
+  background: #fff;
+}
+
+.easy-input {
+  display: inline-block;
+  outline: none;
+  border: 0;
+  text-align: center;
+  background: transparent;
+  border-bottom: 2px solid #00000094;
+}
+
+.easy-input::placeholder {
+  color: #00000059;
+}
+
+.div-btn {
+  outline: none;
+  border: 0px;
+  background: transparent;
+}
+
+.search-div {
+  position: relative;
+  top: 300px;
+  text-align: center
+}
+
+.search-div .search-input {
+  width: 380px;
+  height: 32px;
+  margin: 10px 12px;
+  padding: 0px 10px;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.search-div .search-btn {
+  position: relative;
+  top: 6px;
+  color: #00000082;
+  -webkit-transition: color .35s;
+  -o-transition: color .35s;
+  transition: color .35s;
+}
+
+.search-div .search-btn:hover {
+  color: #5ca8e1b5;
 }
