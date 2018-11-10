@@ -2,6 +2,7 @@
 console.log("content-script run");
 let isEnd = false;  // 是否清除了百度异步加载的广告
 let count = 0;
+let needClear = true;
 
 /* true: 是广告*/
 function checkIfAds($child) {
@@ -65,7 +66,10 @@ function finalClearAdsInBaidu() {
 chrome.storage.sync.get({'normal_clear': false}, function(items) {
   console.log(items.normal_clear);
   if(items.normal_clear == true) {
+    needClear = true;
     finalClearAdsInBaidu();
+  } else {
+    needClear = false;
   }
 });
 

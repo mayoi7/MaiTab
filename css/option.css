@@ -1,0 +1,19 @@
+body {
+  font-family: Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
+  height: 160px;
+}
+
+.setting {
+  margin-bottom: 30px;
+}
+
+.intro {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}

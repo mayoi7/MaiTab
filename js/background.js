@@ -12,10 +12,15 @@ chrome.contextMenus.create({
 chrome.webRequest.onBeforeRequest.addListener((details) => {
     // 每次拦截到搜索的请求就重新清理广告
     // 发送一条一次性的消息
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { reclear: true }, (response) => {
-        console.log("response: " + response);
-      });
+    // 如果设置了清理就清理
+    chrome.storage.sync.get({'normal_clear': false}, function(items) {
+      if(items.normal_clear == true) {
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+          chrome.tabs.sendMessage(tabs[0].id, { reclear: true }, (response) => {
+            console.log("response: " + response);
+          });
+        });
+      }
     });
   },
   {urls: [
