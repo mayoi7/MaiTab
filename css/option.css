@@ -1,6 +1,6 @@
 body {
   font-family: Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
-  height: 160px;
+  height: 200px;
 }
 
 .setting {
@@ -16,4 +16,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.text-div {
+  display: inline-block;
+  width: 225px;
+  margin-left: 33px;
 }

@@ -59,24 +59,38 @@ function finalClearAdsInBaidu() {
     clearAdsAgain();
     count += 1;
     if(count >= 50) clearInterval(time);
-    console.log('test once');
+//    console.log('test once');
   }, 200);
 }
 
-chrome.storage.sync.get({'normal_clear': false}, function(items) {
-  console.log(items.normal_clear);
+// 清理搜索页面右侧的百度推广
+function clearPageRight() {
+  $('#content_right').hide();
+}
+
+// 判断用户是否设置了清理
+chrome.storage.sync.get({'normal_clear': false, 'right_clear': false}, function(items) {
+//  console.log(items.normal_clear);
   if(items.normal_clear == true) {
     needClear = true;
     finalClearAdsInBaidu();
   } else {
     needClear = false;
   }
+
+  if(items.right_clear == true) {
+    clearPageRight();
+  }
 });
 
 // 收到background发来的消息时进行再次清理
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.reclear == true) {  // 判断是否为要处理的消息
+  if (request.normal_clear == true) {  // 判断是否为要处理的消息
     finalClearAdsInBaidu();
+    sendResponse({"result": "ok"});
+  }
+  if (request.right_clear == true) {  // 判断是否为要处理的消息
+    clearPageRight();
     sendResponse({"result": "ok"});
   }
 });

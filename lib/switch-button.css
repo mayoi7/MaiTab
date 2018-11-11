@@ -1,7 +1,6 @@
 .switch-box {
   display: block;
   margin-top: 24px;
-  text-align: center;
 }
 .switch-box .switch-box-slider {
   position: relative;
