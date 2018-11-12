@@ -1,0 +1,25 @@
+/* 给搜索结果页进行美化 */
+body {
+  font-family: Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif !important;
+}
+
+#s_tab {
+  padding: 55px 0 0 0 !important;
+}
+
+.s_tab_inner {
+  text-align: center;
+}
+
+#wrapper_wrapper {
+  padding: 0 20%;
+  background: #d9d9d961;
+}
+
+#container {
+  width: 100%;
+  padding-left: 7.3%;
+  padding-bottom: 1px;
+  background: #fff;
+  box-shadow: 1px 5px 14px 2px #8888889c;
+}
