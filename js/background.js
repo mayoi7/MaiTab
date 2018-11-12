@@ -32,7 +32,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
     });
   },
   {urls: [
-    "*://*.baidu.com/*tn=baidu&word=*",
-    "*://*.baidu.com/*tn=baidu&wd=*"
+    "*://*.baidu.com/*word=*",
+    "*://*.baidu.com/*wd=*"
   ]}, ["blocking"]
 );
