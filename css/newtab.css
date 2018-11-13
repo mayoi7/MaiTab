@@ -1,9 +1,24 @@
+html, body, #app, .container {
+  height: 100%;
+}
+
 body {
 /* font-family: "Merriweather", Georgia, serif; */
 /* font-family: soleil, Raleway, sans-serif; */
   font-family: 'lora';
-  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+  background: url(/img/bg/bg_demo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
 }
+
+/* 高斯模糊效果 */
+/* -webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px); */
 
 .easy-input {
   display: inline-block;
@@ -24,10 +39,52 @@ body {
   background: transparent;
 }
 
+.light {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffffc4;
+}
+
+.surrounding {
+  position: relative;
+  top: 252px;
+  height: 200px;
+  text-align: center;
+  margin: 0 190px;
+}
+
+.full-blur {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  background-image: url(/img/bg/bg_demo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+
+  /* 设置柔光 */
+  opacity: 0.5;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+/*
+.blur {
+  position: absolute;
+  left: 350px;
+  top: 247px;
+  width: 760px;
+  height: 200px;
+} */
+
 .search-div {
   position: relative;
-  top: 300px;
-  text-align: center
+  top: 68px;
 }
 
 .search-div .search-input {
@@ -49,5 +106,5 @@ body {
 }
 
 .search-div .search-btn:hover {
-  color: #5ca8e1b5;
+  color: #ffffff82;
 }
