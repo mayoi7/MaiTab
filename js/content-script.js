@@ -52,8 +52,14 @@ function clearAdsInBaidu() {
   });
 }
 
+// 清理百度搜索的特殊弹窗
+function clearWindow() {
+  $('.result-op').hide();
+}
+
 function finalClearAdsInBaidu() {
   clearAdsInBaidu();
+  clearWindow();
   count = 0;
   let time = setInterval(function(){
     clearAdsAgain();
