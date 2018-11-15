@@ -43,7 +43,7 @@ filter: blur(5px); */
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #ffffff4d;
+  background: #fffffff2;
 }
 
 .surrounding {
@@ -55,7 +55,7 @@ filter: blur(5px); */
 }
 
 .full-blur {
-  display: none;
+  /* display: none; */
   position: absolute;
   height: 100%;
   width: 100%;
@@ -69,10 +69,10 @@ filter: blur(5px); */
   /* 设置柔光 */
   opacity: 0.5;
 
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
 }
 /*
 .blur {
