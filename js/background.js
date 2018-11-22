@@ -1,13 +1,15 @@
 /*jshint esversion: 6 */
 
 // right click on any page
-chrome.contextMenus.create({
-    title: "Go MaiTab",
-    // documentUrlPatterns: ['https://*.bilibili.com/*'], // 只在某些页面显示此右键菜单
-    onclick: function(){
-      alert('success');
-    }
-});
+// chrome.contextMenus.create({
+//     title: "Go MaiTab",
+//     // documentUrlPatterns: ['https://*.bilibili.com/*'], // 只在某些页面显示此右键菜单
+//     onclick: function(){
+//       console.log("go");
+//       alert("yes");
+//       top.location="/html/newtab.html";
+//     }
+// });
 
 chrome.webRequest.onBeforeRequest.addListener((details) => {
     // 每次拦截到搜索的请求就重新清理广告
