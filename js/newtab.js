@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 $(function() {
+  setBlurDegree();
+
   $('#search').on('click', function(event) {
     event.preventDefault();
     /* Act on the event */
@@ -15,3 +17,20 @@ $(function() {
     }
   });
 });
+
+$('#sb').bind('change', (e) => {
+  let degree = $('#sb').val();
+  $('.full-blur').css({
+    filter: 'blur(' + (20 * degree / 100) + 'px)'
+  });
+  chrome.storage.sync.set({'blur_degree': degree}, function(items) {});
+});
+
+function setBlurDegree() {
+  chrome.storage.sync.get({'blur_degree': 0}, function(items) {
+    $('.full-blur').css({
+      filter: 'blur(' + (20 * items.blur_degree / 100) + 'px)'
+    });
+    $('#sb').val(items.blur_degree);
+  });
+}
