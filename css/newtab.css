@@ -109,3 +109,53 @@ filter: blur(5px); */
 .search-div .search-btn:hover {
   color: #ffffff82;
 }
+
+.slide-bar {
+  width: 245px;
+  height: 50px;
+  padding: 20px;
+  position: fixed;
+  right: 20px;
+  bottom: 16px;
+}
+
+.slide-bar:hover .slider {
+  background: #b6b6b669;
+}
+
+.slide-bar:hover .slider::-webkit-slider-thumb {
+  background: #2626266e;
+}
+
+/* 滑动条的样式 */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 6px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+    transition: background 1.2s;
+    background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 200px; /*将轨道设为圆角的*/
+    /* box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/ */
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 17px;
+    width: 17px;
+    margin-top: -2px; /*使滑块超出轨道部分的偏移量相等*/
+    border-radius: 50%; /*外观设置为圆形*/
+    /* border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/ */
+    /* box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/ */
+}
